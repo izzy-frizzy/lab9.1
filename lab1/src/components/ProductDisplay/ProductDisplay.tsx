@@ -24,6 +24,8 @@ export const ProductDisplay = (props: ProductDisplayProps) => {
       {props.showStockStatus && (
         <div>{props.product.inStock ? "in Stock" : "out of stock"}</div>
       )}
+      {props.showDescription}
+      {}
 
       {/* {props.product} */}
     </div>
