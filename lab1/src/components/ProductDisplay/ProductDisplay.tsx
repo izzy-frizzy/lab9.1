@@ -18,16 +18,12 @@ export interface ProductDisplayProps {
 
 export const ProductDisplay = (props: ProductDisplayProps) => {
   return (
-    <div id = {props.product.id}>
-        
-        {<img src={props.product.imageUrl}></img>}
+    <div id={props.product.id}>
+      {<img src={props.product.imageUrl}></img>}
       {props.showStockStatus && (
         <div>{props.product.inStock ? "in Stock" : "out of stock"}</div>
       )}
       {props.showDescription}
-      {}
-
-      {/* {props.product} */}
     </div>
   );
 };

@@ -3,41 +3,45 @@ import AlertBox from "./components/AlertBox/AlertBox";
 import { ProductDisplay } from "./components/ProductDisplay/ProductDisplay";
 import UserProfileCard from "./components/UserProfileCard/UserProfileCard";
 
-
 const user = {
-  id: '1',
-  name: 'John Doe',
-  email: 'john.doe@example.com',
-  role: 'Software Engineer',
-  avatarUrl: 'https://example.com/avatar.jpg'
+  id: "1",
+  name: "John Doe",
+  email: "john.doe@example.com",
+  role: "Software Engineer",
+  avatarUrl: "https://example.com/avatar.jpg",
 };
+const product = {
+  id: "1",
+  name: "Wireless Headphones",
+  price: 199.99,
+  description: "High-quality wireless headphones with noise cancellation.",
+  imageUrl: "https://example.com/headphones.jpg",
+  inStock: true,
+};
+
 function App() {
   return (
     <div>
       <AlertBox
         type="success"
-        message="this is a message"
-        onClose={() => alert('Alert closed')}
-      ></AlertBox>
+        message="Your profile has been updated successfully!"
+        onClose={() => alert("Alert closed")}
+      >
+        
+      </AlertBox>
       <UserProfileCard
         user={user}
-      showEmail={true}
-      showRole={true}
-      onEdit={(userId: any) => alert(`Editing user ${userId}`)}
-      >
-      </UserProfileCard>
+        showEmail={true}
+        showRole={true}
+        onEdit={(userId: any) => alert(`Editing user ${userId}`)}
+      ></UserProfileCard>
 
       <ProductDisplay
-        product={{
-          id: "0",
-          name: "laptop",
-          price: 380,
-          description: "a laptop",
-          imageUrl: "https://example.com/headphones.jpg",
-          inStock: false,
-        }}
+        product={product}
+        showDescription={true}
         showStockStatus={true}
-      />
+        onAddToCart={(productId) => alert(`Added product ${productId} to cart`)}
+      ></ProductDisplay>
     </div>
   );
 }

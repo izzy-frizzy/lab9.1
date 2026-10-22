@@ -15,14 +15,27 @@ export interface UserProfileCardProps {
   children?: React.ReactNode;
 }
 
-export default function userProfileCard(props: UserProfileCardProps) {
+export default function UserProfileCard(props: UserProfileCardProps) {
+
   return (
-    <div>
-      {props.showEmail}
+     <div className="card">
+      {props.user.avatarUrl && (
+        <img src={props.user.avatarUrl} alt={`${props.user.name}'s avatar`} />
+      )}
+
       <h1>{props.user.name}</h1>
-      <p>{props.user.email}</p>
-      <p>{props.user.role}</p>
-      
+
+      {props.showEmail && <p>{props.user.email}</p>}
+      {props.showRole && <p>{props.user.role}</p>}
+
+      {props.onEdit && (
+        <button type="button" onClick={() => props.onEdit?.(props.user.id)}>
+          Edit
+        </button>
+      )}
+
+      {props.children}
     </div>
+   
   );
 }
