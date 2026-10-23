@@ -3,14 +3,14 @@ import AlertBox from "./components/AlertBox/AlertBox";
 import { ProductDisplay } from "./components/ProductDisplay/ProductDisplay";
 import UserProfileCard from "./components/UserProfileCard/UserProfileCard";
 import headphonesImage from "./assets/headphones.avif";
-import defaultavatar from "./assets/default avatar.jpg"
+import defaultAvatar from "./assets/default avatar.jpg"
 
 const user = {
   id: "1",
   name: "John Doe",
   email: "john.doe@example.com",
   role: "Software Engineer",
-  avatarUrl: defaultavatar,
+  avatarUrl: defaultAvatar,
 };
 const product = {
   id: "1",

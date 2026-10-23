@@ -22,26 +22,31 @@ export const ProductDisplay = (props: ProductDisplayProps) => {
       {/* image */}
 
       {<img src={props.product.imageUrl}></img>}
-      
+
       {/* name */}
       <p>{props.product.name}</p>
 
       {/* price */}
       <p>{props.product.price}</p>
 
-
       {/* decription */}
-      <p>{props.showDescription && (
-        <div>{props.product.description? "High-quality wireless headphones with noise cancellation": ""}</div>
-      )}</p>
+      <p>
+        {props.showDescription && (
+          <div>
+            {props.product.description
+              ? "High-quality wireless headphones with noise cancellation"
+              : ""}
+          </div>
+        )}
+      </p>
 
-{/* stock */}
+      {/* stock */}
 
       {props.showStockStatus && (
         <div>{props.product.inStock ? "in Stock" : "out of stock"}</div>
       )}
 
-    {/* add tp cart */}
+      {/* add to cart */}
       {props.onAddToCart && (
         <button onClick={() => props.onAddToCart?.(props.product.id)}>
           Add to Cart
